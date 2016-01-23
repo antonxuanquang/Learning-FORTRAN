@@ -1,0 +1,29 @@
+IN 12345678 T.Nute        COSC           ASSOCPROF         90000.00
+IN 34567890 B.Smith       BIOL           PROF             110000.00
+IN 23456789 S.Jones       CHEM           INST              75000.00
+IN 01234567 B.Gates       COSC           INST              85000.00
+IN 32010101 S.Jobs        COSC           PROF             125000.00
+PA 
+IN 13456789 J.Jones       MATH           PROF             100000.00
+IN 01234567 B.Doe         ENGR           ASSOCPROF        120000.00
+PT PROF
+DE 23456789
+UD 23456789 S.Jones       CHEM
+UT 01234567 B.Gates       ASSTPROF
+UP 01234567 B.Gates       100000.00
+IN 34534565 H.Nelson      ENGR           ASSOCPROF        100000.00    
+IN 36323232 P.Jones       PHYS           ASSTPROF          68000.00
+PA
+PI 13456789 S.Jones
+IN 00232323 Y.Tittle      CHEM           ASSTPROF         111000.00
+IN 45454545 T.Tunes       PHYS           INST              90000.00
+UP 34534565 H.Nelson      110000.00
+IN 12121212 B.Gates       BIOL           ASSTPROF         125000.00
+UD 12121212 B.Gates       CHEM
+UT 12121212 B.Gates       ASSOCPROF
+UP 12121212 B.Gates       150000.00
+DE 13456789
+DE 23456789
+PI 23456789 S.JONES
+DE 12345678
+PA
