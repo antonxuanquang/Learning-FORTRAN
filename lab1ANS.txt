@@ -1,0 +1,50 @@
+ *** PROGRAM STARTED ***
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =  12345678  NAME = T.Nute        **
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =  34567890  NAME = B.Smith       **
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =  23456789  NAME = S.Jones       **
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =  1234567  NAME = B.Gates       **
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =  32010101  NAME = S.Jobs        **
+ COMMAND = PA
+ ** In PRINTALL_OP w/ NO ADDITIONAL INPUT DATA **
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =  13456789  NAME = J.Jones       **
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =  1234567  NAME = B.Doe         **
+ COMMAND = PT
+ COMMAND = DE
+ ** In DELETE_OP w/ ID =  23456789  **
+ COMMAND = UD
+ COMMAND = UT
+ COMMAND = UP
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =  34534565  NAME = H.Nelson      **
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =  36323232  NAME = P.Jones       **
+ COMMAND = PA
+ ** In PRINTALL_OP w/ NO ADDITIONAL INPUT DATA **
+ COMMAND = PI
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =  232323  NAME = Y.Tittle      **
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =  45454545  NAME = T.Tunes       **
+ COMMAND = UP
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =  12121212  NAME = B.Gates       **
+ COMMAND = UD
+ COMMAND = UT
+ COMMAND = UP
+ COMMAND = DE
+ ** In DELETE_OP w/ ID =  13456789  **
+ COMMAND = DE
+ ** In DELETE_OP w/ ID =  23456789  **
+ COMMAND = PI
+ COMMAND = DE
+ ** In DELETE_OP w/ ID =  12345678  **
+ COMMAND = PA
+ ** In PRINTALL_OP w/ NO ADDITIONAL INPUT DATA **
+ END OF DATA REACHED
