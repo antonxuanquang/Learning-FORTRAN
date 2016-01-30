@@ -10,7 +10,7 @@ PROGRAM MAIN
 		DIMENSION INT (100)				:: INDEX_LIST
 
 		OPEN(5, STATUS="OLD", FILE="C:\Users\James\Documents\PLC\Learning-FORTRAN\Lab1Data.txt")
-		OPEN(6, FILE="lab1ANS.txt")
+		OPEN(6, FILE="C:\Users\James\Documents\PLC\Learning-FORTRAN\lab1ANS.txt")
 
 		WRITE(6, *) "*** PROGRAM STARTED ***"
 ! start reading loops

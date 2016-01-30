@@ -1,0 +1,57 @@
+ *** PROGRAM STARTED ***
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =     12345678  NAME = T.Nute        **
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =     34567890  NAME = B.Smith       **
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =     23456789  NAME = S.Jones       **
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =      1234567  NAME = B.Gates       **
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =     32010101  NAME = S.Jobs        **
+ COMMAND = PA
+ COMMAND =   
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =     13456789  NAME = J.Jones       **
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =      1234567  NAME = B.Doe         **
+ COMMAND = PT
+ COMMAND =   
+ COMMAND = DE
+ COMMAND =   
+ COMMAND = UD
+ COMMAND =   
+ COMMAND = UT
+ COMMAND = UP
+ COMMAND =   
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =     34534565  NAME = H.Nelson      **
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =     36323232  NAME = P.Jones       **
+ COMMAND = PA
+ COMMAND =   
+ COMMAND = PI
+ COMMAND =   
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =       232323  NAME = Y.Tittle      **
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =     45454545  NAME = T.Tunes       **
+ COMMAND = UP
+ COMMAND =   
+ COMMAND = IN
+ ** In INSERT_OP w/ ID =     12121212  NAME = B.Gates       **
+ COMMAND = UD
+ COMMAND = UT
+ COMMAND = UP
+ COMMAND =   
+ COMMAND = DE
+ COMMAND =   
+ COMMAND = DE
+ COMMAND =   
+ COMMAND = PI
+ COMMAND =   
+ COMMAND = DE
+ COMMAND =   
+ COMMAND = PA
+ COMMAND =   
+ END OF DATA REACHED
