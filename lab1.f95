@@ -1,6 +1,4 @@
 PROGRAM MAIN
-		
-		USE NODE
 		USE CLASS_FACULTY
 		USE PRINT_HELPER
 		USE UPDATE_HELPER
@@ -8,9 +6,8 @@ PROGRAM MAIN
 
 		CHARACTER(LEN=66) 				:: INPUT_STRING
 		CHARACTER*2						:: COMMAND
-		TYPE(NODE), POINTER				:: HEAD
 
-		OPEN(5, STATUS="OLD", FILE="lab1data.txt")
+		OPEN(5, STATUS="OLD", FILE="C:\Users\James\Documents\PLC\Learning-FORTRAN\Lab1Data.txt")
 		OPEN(6, FILE="lab1ANS.txt")
 
 		WRITE(6, *) "*** PROGRAM STARTED ***"
@@ -25,7 +22,7 @@ PROGRAM MAIN
 
 			WRITE(*, *) "COMMAND = ", COMMAND
 
-			! start if 
+			! start if
 			IF (COMMAND == "IN") THEN
 				CALL INSERT_OP(INPUT_STRING)
 			ELSE IF (COMMAND == "DE") THEN
