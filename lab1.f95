@@ -7,15 +7,19 @@ PROGRAM MAIN
 
 		CHARACTER(LEN=66) 				:: INPUT_STRING
 		CHARACTER*2						:: COMMAND
-		TYPE(FACULTY), DIMENSION (100)        :: FACULTY_LIST
+		TYPE(FACULTY), DIMENSION (100)  :: FACULTY_LIST
         INTEGER, DIMENSION (100)		:: INDEX_LIST
 		INTEGER                         :: FILL_LOOP_COUNTER
 
-		OPEN(5, STATUS="OLD", FILE="C:\Users\James\Documents\PLC\Learning-FORTRAN\Lab1Data.txt")
-		OPEN(6, FILE="C:\Users\James\Documents\PLC\Learning-FORTRAN\lab1ANS.txt")
+		DO FILL_LOOP_COUNTER=0, 100, 1
+            INDEX_LIST (FILL_LOOP_COUNTER) = -99
+        END DO
+        DO FILL_LOOP_COUNTER=0, 100, 1
+            PRINT*, INDEX_LIST(FILL_LOOP_COUNTER)
+        END DO
 
-		!DO(FILL_LOOP_COUNTER=0, 100, 1)
-            !FACULTY_LIST(FILL_LOOP_COUNTER) = -99
+		OPEN(5, STATUS="OLD", FILE="Lab1Data.txt")
+		OPEN(6, FILE="lab1ANS.txt")
 
 		WRITE(6, *) "*** PROGRAM STARTED ***"
 ! start reading loops
@@ -59,6 +63,8 @@ PROGRAM MAIN
 
 
 	999	WRITE (6, *) "END OF DATA REACHED"
+	CLOSE(5)
+	CLOSE(6)
 END
 
 
