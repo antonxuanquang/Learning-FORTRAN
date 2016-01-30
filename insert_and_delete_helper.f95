@@ -37,35 +37,14 @@ MODULE INSERT_AND_DELETE
 
             !update array
             FACULTY_LIST(EMPTY_INDEX) = FACULTY_MEMBER
-            WRITE (*,*) "TEST FACULTY(3) ID", FACULTY_LIST(3)%IDNUM
 
             !return head
             INSERT_OP = EMPTY_INDEX
 	END FUNCTION INSERT_OP
 
 
-
-	INTEGER FUNCTION FIND_EMPTY_INDEX(FACULTY_LIST)
-        INTEGER					            :: EMPTY_INDEX, I
-        TYPE(FACULTY)	            		:: FACULTY_MEMBER
-        TYPE(FACULTY), DIMENSION(100)       :: FACULTY_LIST
-
-        EMPTY_INDEX = -1
-
-        DO I = 1,100,1
-            IF (FACULTY_LIST(I)%IDNUM <= 0) THEN
-                EMPTY_INDEX = I
-                EXIT
-            END IF
-        END DO
-        WRITE(*,*)
-        FIND_EMPTY_INDEX = EMPTY_INDEX
-    END FUNCTION
-
-
-
 	SUBROUTINE DELETE_OP(INPUT_STRING, FACULTY_LIST, HEAD_INT)
-            INTEGER                             :: IDNUM, INDEX, HEAD_INT
+            INTEGER                             :: IDNUM, PREVIOUS_INDEX, INDEX , HEAD_INT
             CHARACTER*66                        :: INPUT_STRING
             TYPE(FACULTY)                       :: FACULTY_MEMBER
             TYPE(FACULTY), DIMENSION(100)       :: FACULTY_LIST
@@ -73,8 +52,14 @@ MODULE INSERT_AND_DELETE
             READ(INPUT_STRING, 200) IDNUM
         200 FORMAT(3X,I8)
 
-            !INDEX = FIND_FACULTY_MEMBER(IDNUM, FACULTY_LIST, HEAD_INDEX)
+            PREVIOUS_INDEX = FIND_PREVIOUS_FACULTY(IDNUM, FACULTY_LIST, HEAD_INT)
+            INDEX = NEXT(FACULTY_LIST(PREVIOUS_INDEX))
 
+            !change pointer address
+            FACULTY_LIST(PREVIOUS_INDEX)%NEXT_INDEX = FACULTY_LIST(INDEX)%NEXT_INDEX
+
+            !delete faculty (e.i: change ID number to -999999)
+            FACULTY_LIST(INDEX)%IDNUM = -99999999
 
 	END SUBROUTINE DELETE_OP
 
