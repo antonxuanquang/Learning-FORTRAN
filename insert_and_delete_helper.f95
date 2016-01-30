@@ -8,16 +8,15 @@ MODULE INSERT_AND_DELETE
 
     CONTAINS
 
-	SUBROUTINE INSERT_OP(INPUT_STRING, FACULTY_LIST, INDEX_LIST)
+	INTEGER FUNCTION INSERT_OP(INPUT_STRING, FACULTY_LIST, HEAD_INT)
 			CHARACTER*66 			:: INPUT_STRING
-			INTEGER					:: IDNUM, EMPTY_INDEX
+			INTEGER					:: IDNUM, EMPTY_INDEX, HEAD_INT
 			CHARACTER*13			:: NAME
 			CHARACTER*4				:: DEPT
 			CHARACTER*9				:: RANK
 			REAL					:: PAY
 			TYPE(FACULTY)			:: FACULTY_MEMBER
 			TYPE(FACULTY), DIMENSION(100)      :: FACULTY_LIST
-            INTEGER, DIMENSION(100)      :: INDEX_LIST
 
 			READ(INPUT_STRING, 300) IDNUM, NAME, DEPT, RANK, PAY
 		300	FORMAT(3X, I8, 1X, A13, 1X, A4, 11X, A9, 8X, F9.2)
@@ -30,56 +29,52 @@ MODULE INSERT_AND_DELETE
 			FACULTY_MEMBER%RANK = RANK
 			FACULTY_MEMBER%PAY = PAY
 
+			!point to next old first position
+            FACULTY_MEMBER%NEXT_INDEX = HEAD_INT
+
             !find the empty index to put in
-            EMPTY_INDEX = FIND_EMPTY_INDEX(INDEX_LIST)
-            WRITE (*,*) "THIS IS THE EMPTY INDEX", EMPTY_INDEX
+            EMPTY_INDEX = FIND_EMPTY_INDEX(FACULTY_LIST)
 
-            !update 2 arrays
+            !update array
             FACULTY_LIST(EMPTY_INDEX) = FACULTY_MEMBER
-            INDEX_LIST(EMPTY_INDEX) = EMPTY_INDEX
-	END SUBROUTINE INSERT_OP
+            WRITE (*,*) "TEST FACULTY(3) ID", FACULTY_LIST(3)%IDNUM
+
+            !return head
+            INSERT_OP = EMPTY_INDEX
+	END FUNCTION INSERT_OP
 
 
 
-	INTEGER FUNCTION FIND_EMPTY_INDEX(INDEX_LIST)
+	INTEGER FUNCTION FIND_EMPTY_INDEX(FACULTY_LIST)
         INTEGER					            :: EMPTY_INDEX, I
-        INTEGER, DIMENSION(100)             :: INDEX_LIST
+        TYPE(FACULTY)	            		:: FACULTY_MEMBER
+        TYPE(FACULTY), DIMENSION(100)       :: FACULTY_LIST
 
         EMPTY_INDEX = -1
 
         DO I = 1,100,1
-            WRITE (*,*) "THIS IS THE INDEX I = ", I
-            IF (INDEX_LIST(I) == -99) THEN
-                WRITE (*,*) "THIS IS THE INDEX IN IF I = ", I
+            IF (FACULTY_LIST(I)%IDNUM <= 0) THEN
                 EMPTY_INDEX = I
                 EXIT
             END IF
         END DO
-
+        WRITE(*,*)
         FIND_EMPTY_INDEX = EMPTY_INDEX
     END FUNCTION
 
 
 
-	SUBROUTINE DELETE_OP(INPUT_STRING, FACULTY_LIST, INDEX_LIST)
-            INTEGER                             :: IDNUM, INDEX
+	SUBROUTINE DELETE_OP(INPUT_STRING, FACULTY_LIST, HEAD_INT)
+            INTEGER                             :: IDNUM, INDEX, HEAD_INT
             CHARACTER*66                        :: INPUT_STRING
-            INTEGER, DIMENSION(100)             :: INDEX_LIST
             TYPE(FACULTY)                       :: FACULTY_MEMBER
             TYPE(FACULTY), DIMENSION(100)       :: FACULTY_LIST
 
             READ(INPUT_STRING, 200) IDNUM
         200 FORMAT(3X,I8)
 
-            WRITE (*,*) "IN DELETE FUNCTION", IDNUM
+            !INDEX = FIND_FACULTY_MEMBER(IDNUM, FACULTY_LIST, HEAD_INDEX)
 
-            !find the empty index to put in
-            INDEX = FIND_EMPTY_INDEX(IDNUM, FACULTY_LIST)
-            WRITE (*,*) "THIS IS THE DELETE INDEX", INDEX
-
-            !update 2 arrays
-            NULLIFY(FACULTY_LIST(INDEX))
-            INDEX_LIST(INDEX) = -99
 
 	END SUBROUTINE DELETE_OP
 
