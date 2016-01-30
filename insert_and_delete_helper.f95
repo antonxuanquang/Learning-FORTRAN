@@ -1,6 +1,7 @@
 MODULE INSERT_AND_DELETE
 
 	USE CLASS_FACULTY
+	USE FINDER
 
 
 	IMPLICIT NONE
@@ -36,9 +37,6 @@ MODULE INSERT_AND_DELETE
             !update 2 arrays
             FACULTY_LIST(EMPTY_INDEX) = FACULTY_MEMBER
             INDEX_LIST(EMPTY_INDEX) = EMPTY_INDEX
-
-
-
 	END SUBROUTINE INSERT_OP
 
 
@@ -64,7 +62,7 @@ MODULE INSERT_AND_DELETE
 
 
 	SUBROUTINE DELETE_OP(INPUT_STRING, FACULTY_LIST, INDEX_LIST)
-            INTEGER                             :: IDNUM
+            INTEGER                             :: IDNUM, INDEX
             CHARACTER*66                        :: INPUT_STRING
             INTEGER, DIMENSION(100)             :: INDEX_LIST
             TYPE(FACULTY)                       :: FACULTY_MEMBER
@@ -73,7 +71,15 @@ MODULE INSERT_AND_DELETE
             READ(INPUT_STRING, 200) IDNUM
         200 FORMAT(3X,I8)
 
+            WRITE (*,*) "IN DELETE FUNCTION", IDNUM
 
+            !find the empty index to put in
+            INDEX = FIND_EMPTY_INDEX(IDNUM, FACULTY_LIST)
+            WRITE (*,*) "THIS IS THE DELETE INDEX", INDEX
+
+            !update 2 arrays
+            NULLIFY(FACULTY_LIST(INDEX))
+            INDEX_LIST(INDEX) = -99
 
 	END SUBROUTINE DELETE_OP
 
