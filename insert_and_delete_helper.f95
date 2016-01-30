@@ -60,6 +60,7 @@ MODULE INSERT_AND_DELETE
 
             !delete faculty (e.i: change ID number to -999999)
             FACULTY_LIST(INDEX)%IDNUM = -99999999
+            FACULTY_LIST(INDEX)%NEXT_INDEX = -99
 
 	END SUBROUTINE DELETE_OP
 

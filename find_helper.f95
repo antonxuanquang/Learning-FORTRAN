@@ -8,7 +8,6 @@ MODULE FINDER
     ! return first empty index in faculty list array
     INTEGER FUNCTION FIND_EMPTY_INDEX(FACULTY_LIST)
         INTEGER					            :: EMPTY_INDEX, I
-        TYPE(FACULTY)	            		:: FACULTY_MEMBER
         TYPE(FACULTY), DIMENSION(100)       :: FACULTY_LIST
 
         EMPTY_INDEX = -1
@@ -29,7 +28,6 @@ MODULE FINDER
 
         INTEGER                             :: IDNUM,I,HEAD_INDEX, INDEX, CURRENT
         TYPE(FACULTY), DIMENSION(100)       :: FACULTY_LIST
-        TYPE(FACULTY)	            		:: FACULTY_MEMBER
 
         INDEX = -1;
         CURRENT = HEAD_INDEX
@@ -48,7 +46,6 @@ MODULE FINDER
 
         INTEGER                             :: IDNUM,I,HEAD_INDEX, INDEX, CURRENT,PREVIOUS
         TYPE(FACULTY), DIMENSION(100)       :: FACULTY_LIST
-        TYPE(FACULTY)	            		:: FACULTY_MEMBER
 
         INDEX = -1;
         CURRENT = HEAD_INDEX
@@ -62,5 +59,6 @@ MODULE FINDER
         END DO
         FIND_PREVIOUS_FACULTY = INDEX
     END FUNCTION
+
 
 END MODULE FINDER
