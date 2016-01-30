@@ -8,7 +8,7 @@ MODULE INSERT_AND_DELETE
 
 	SUBROUTINE INSERT_OP(INPUT_STRING, FACULTY_LIST, INDEX_LIST)
 			CHARACTER*66 			:: INPUT_STRING
-			INTEGER					:: IDNUM
+			INTEGER					:: IDNUM, EMPTY_INDEX
 			CHARACTER*13			:: NAME
 			CHARACTER*4				:: DEPT
 			CHARACTER*9				:: RANK
@@ -21,8 +21,42 @@ MODULE INSERT_AND_DELETE
 		300	FORMAT(3X, I8, 1X, A13, 1X, A4, 11X, A9, 8X, F9.2)
 			WRITE(6, *) "** In INSERT_OP w/ ID = ", IDNUM, " NAME = ", NAME, " **"
 
+			!create new faculty member
+			FACULTY_MEMBER%IDNUM = IDNUM
+			FACULTY_MEMBER%NAME = NAME
+			FACULTY_MEMBER%DEPT = DEPT
+			FACULTY_MEMBER%RANK = RANK
+			FACULTY_MEMBER%PAY = PAY
+
+            !find the empty index to put in
+            EMPTY_INDEX = FIND_EMPTY_INDEX(INDEX_LIST)
+            WRITE (*,*) "THIS IS THE EMPTY INDEX", EMPTY_INDEX
+
+            !update 2 arrays
+
+
 
 	END SUBROUTINE INSERT_OP
+
+
+
+	INTEGER FUNCTION FIND_EMPTY_INDEX(INDEX_LIST)
+        INTEGER					            :: EMPTY_INDEX, I
+        INTEGER, DIMENSION(100)      :: INDEX_LIST
+
+        EMPTY_INDEX = -1
+
+        DO I = 0,100,1
+            WRITE (*,*) "THIS IS THE INDEX I = ", I
+            IF (INDEX_LIST(I) == -99) THEN
+                WRITE (*,*) "THIS IS THE INDEX IN IF I = ", I
+                EMPTY_INDEX = I
+                EXIT
+            END IF
+        END DO
+
+        FIND_EMPTY_INDEX = EMPTY_INDEX
+    END FUNCTION
 
 
 
