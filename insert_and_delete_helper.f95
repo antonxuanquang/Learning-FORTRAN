@@ -53,14 +53,17 @@ MODULE INSERT_AND_DELETE
         200 FORMAT(3X,I8)
 
             PREVIOUS_INDEX = FIND_PREVIOUS_FACULTY(IDNUM, FACULTY_LIST, HEAD_INT)
-            INDEX = NEXT(FACULTY_LIST(PREVIOUS_INDEX))
+            IF (PREVIOUS_INDEX > 0) THEN
+                INDEX = NEXT(FACULTY_LIST(PREVIOUS_INDEX))
+                !change pointer address
+                FACULTY_LIST(PREVIOUS_INDEX)%NEXT_INDEX = FACULTY_LIST(INDEX)%NEXT_INDEX
 
-            !change pointer address
-            FACULTY_LIST(PREVIOUS_INDEX)%NEXT_INDEX = FACULTY_LIST(INDEX)%NEXT_INDEX
-
-            !delete faculty (e.i: change ID number to -999999)
-            FACULTY_LIST(INDEX)%IDNUM = -99999999
-            FACULTY_LIST(INDEX)%NEXT_INDEX = -99
+                !delete faculty (e.i: change ID number to -999999)
+                FACULTY_LIST(INDEX)%IDNUM = -99999999
+                FACULTY_LIST(INDEX)%NEXT_INDEX = -99
+            ELSE
+                WRITE (*,*) "CAN'T FOUND ID: ", IDNUM
+            END IF
 
 	END SUBROUTINE DELETE_OP
 
