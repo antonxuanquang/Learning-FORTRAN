@@ -62,7 +62,7 @@ MODULE INSERT_AND_DELETE
                 FACULTY_LIST(INDEX)%IDNUM = -99999999
                 FACULTY_LIST(INDEX)%NEXT_INDEX = -99
             ELSE
-                WRITE (*,*) "CAN'T FOUND ID: ", IDNUM
+                WRITE (*,*) "CAN'T FIND ID: ", IDNUM
             END IF
 
 	END SUBROUTINE DELETE_OP
