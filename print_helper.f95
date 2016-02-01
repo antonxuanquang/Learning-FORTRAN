@@ -31,7 +31,11 @@ MODULE PRINT_HELPER
             CURRENT = HEAD_INDEX
             DO WHILE (CURRENT /= -99)
                 IF (FACULTY_LIST(CURRENT)%RANK == TITLE) THEN
-                    WRITE(*,*) PRINT_FACULTY(FACULTY_LIST(CURRENT))
+                    IF(CURRENT>0) THEN
+                        WRITE(*,*) PRINT_FACULTY(FACULTY_LIST(CURRENT))
+                    ELSE
+                        WRITE (*,*) "FACULTY MEMBER DOES NOT EXIST"
+                    END IF
                 END IF
                 CURRENT = NEXT(FACULTY_LIST(CURRENT));
             END DO
@@ -50,7 +54,11 @@ MODULE PRINT_HELPER
             CURRENT = HEAD_INDEX
             DO WHILE (CURRENT /= -99)
                 IF (FACULTY_LIST(CURRENT)%DEPT == DEPT) THEN
-                    WRITE(*,*) PRINT_FACULTY(FACULTY_LIST(CURRENT))
+                    IF(CURRENT>0) THEN
+                        WRITE(*,*) PRINT_FACULTY(FACULTY_LIST(CURRENT))
+                    ELSE
+                        WRITE (*,*) "FACULTY MEMBER DOES NOT EXIST"
+                    END IF
                 END IF
                 CURRENT = NEXT(FACULTY_LIST(CURRENT));
             END DO
@@ -66,7 +74,11 @@ MODULE PRINT_HELPER
         200 FORMAT(3X, I8)
 
             CURRENT = FIND_FACULTY_MEMBER(IDNUMBER, FACULTY_LIST, HEAD_INDEX)
-            WRITE (*,*) PRINT_FACULTY(FACULTY_LIST(CURRENT));
+            IF(CURRENT>0) THEN
+                WRITE (*,*) PRINT_FACULTY(FACULTY_LIST(CURRENT));
+            ELSE
+                WRITE (*,*) "FACULTY MEMBER DOES NOT EXIST"
+            END IF
 
 
 	END SUBROUTINE PRINT_ID_OP

@@ -20,7 +20,7 @@ MODULE INSERT_AND_DELETE
 
 			READ(INPUT_STRING, 300) IDNUM, NAME, DEPT, RANK, PAY
 		300	FORMAT(3X, I8, 1X, A13, 1X, A4, 11X, A9, 8X, F9.2)
-			WRITE(6, *) "** In INSERT_OP w/ ID = ", IDNUM, " NAME = ", NAME, " **"
+			WRITE(6, *) "** Inserting faculty w/ ID = ", IDNUM, " NAME = ", NAME, " **"
 
 			!create new faculty member
 			FACULTY_MEMBER%IDNUM = IDNUM
@@ -55,6 +55,7 @@ MODULE INSERT_AND_DELETE
             PREVIOUS_INDEX = FIND_PREVIOUS_FACULTY(IDNUM, FACULTY_LIST, HEAD_INT)
             IF (PREVIOUS_INDEX > 0) THEN
                 INDEX = NEXT(FACULTY_LIST(PREVIOUS_INDEX))
+                WRITE(6, *) "** Deleting faculty w/ ID = ", FACULTY_LIST(INDEX)%IDNUM, " NAME = ", FACULTY_LIST(INDEX)%NAME, " **"
                 !change pointer address
                 FACULTY_LIST(PREVIOUS_INDEX)%NEXT_INDEX = FACULTY_LIST(INDEX)%NEXT_INDEX
 
