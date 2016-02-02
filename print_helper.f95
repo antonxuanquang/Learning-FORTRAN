@@ -1,3 +1,8 @@
+!**************************************************************************!
+!*  This module helps the main program print information of all (some)    *!
+!*  faculty members.                                                      *!
+!**************************************************************************!
+
 MODULE PRINT_HELPER
 
     USE CLASS_FACULTY
@@ -6,6 +11,7 @@ MODULE PRINT_HELPER
 
 	CONTAINS
 
+    ! prints all faculty information in the linked list
 	SUBROUTINE PRINT_ALL_OP(FACULTY_LIST,HEAD_INDEX)
         INTEGER                         :: HEAD_INDEX, INDEX
         TYPE(FACULTY), DIMENSION (100)  :: FACULTY_LIST
@@ -18,7 +24,7 @@ MODULE PRINT_HELPER
 
 	END SUBROUTINE PRINT_ALL_OP
 
-
+    ! prints all faculty members that have certain title
 	SUBROUTINE PRINT_TITLE_OP(INPUT_STRING,FACULTY_LIST,HEAD_INDEX)
         CHARACTER*66                    :: INPUT_STRING
         CHARACTER*9                     :: TITLE
@@ -42,6 +48,7 @@ MODULE PRINT_HELPER
 
 	END SUBROUTINE PRINT_TITLE_OP
 
+    ! prints all faculty members that in certain department
 	SUBROUTINE PRINT_DEPT_OP(INPUT_STRING,FACULTY_LIST,HEAD_INDEX)
         CHARACTER*66                    :: INPUT_STRING
         CHARACTER*4                     :: DEPT
@@ -64,7 +71,7 @@ MODULE PRINT_HELPER
             END DO
 	END SUBROUTINE PRINT_DEPT_OP
 
-
+    ! prints all faculty members that have certain id number
 	SUBROUTINE PRINT_ID_OP(INPUT_STRING,FACULTY_LIST,HEAD_INDEX)
         CHARACTER*66                    :: INPUT_STRING
         INTEGER                         :: IDNUMBER, HEAD_INDEX, CURRENT

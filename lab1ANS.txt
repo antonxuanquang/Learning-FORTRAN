@@ -1,57 +1,64 @@
  *** PROGRAM STARTED ***
- COMMAND = IN
- ** In INSERT_OP w/ ID =     12345678  NAME = T.Nute        **
- COMMAND = IN
- ** In INSERT_OP w/ ID =     34567890  NAME = B.Smith       **
- COMMAND = IN
- ** In INSERT_OP w/ ID =     23456789  NAME = S.Jones       **
- COMMAND = IN
- ** In INSERT_OP w/ ID =      1234567  NAME = B.Gates       **
- COMMAND = IN
- ** In INSERT_OP w/ ID =     32010101  NAME = S.Jobs        **
- COMMAND = PA
- COMMAND =   
- COMMAND = IN
- ** In INSERT_OP w/ ID =     13456789  NAME = J.Jones       **
- COMMAND = IN
- ** In INSERT_OP w/ ID =      1234567  NAME = B.Doe         **
- COMMAND = PT
- COMMAND =   
- COMMAND = DE
- COMMAND =   
- COMMAND = UD
- COMMAND =   
- COMMAND = UT
- COMMAND = UP
- COMMAND =   
- COMMAND = IN
- ** In INSERT_OP w/ ID =     34534565  NAME = H.Nelson      **
- COMMAND = IN
- ** In INSERT_OP w/ ID =     36323232  NAME = P.Jones       **
- COMMAND = PA
- COMMAND =   
- COMMAND = PI
- COMMAND =   
- COMMAND = IN
- ** In INSERT_OP w/ ID =       232323  NAME = Y.Tittle      **
- COMMAND = IN
- ** In INSERT_OP w/ ID =     45454545  NAME = T.Tunes       **
- COMMAND = UP
- COMMAND =   
- COMMAND = IN
- ** In INSERT_OP w/ ID =     12121212  NAME = B.Gates       **
- COMMAND = UD
- COMMAND = UT
- COMMAND = UP
- COMMAND =   
- COMMAND = DE
- COMMAND =   
- COMMAND = DE
- COMMAND =   
- COMMAND = PI
- COMMAND =   
- COMMAND = DE
- COMMAND =   
- COMMAND = PA
- COMMAND =   
+ ** Inserting faculty w/ ID =     12345678  NAME = T.Nute        **
+
+ ** Inserting faculty w/ ID =     34567890  NAME = B.Smith       **
+
+ ** Inserting faculty w/ ID =     23456789  NAME = S.Jones       **
+
+ ** Inserting faculty w/ ID =      1234567  NAME = B.Gates       **
+
+ ** Inserting faculty w/ ID =     32010101  NAME = S.Jobs        **
+
+ 32010101 S.Jobs        COSC PROF      125000.00                                                     
+  1234567 B.Gates       COSC INST       85000.00                                                     
+ 23456789 S.Jones       CHEM INST       75000.00                                                     
+ 34567890 B.Smith       BIOL PROF      110000.00                                                     
+ 12345678 T.Nute        COSC ASSOCPROF  90000.00                                                     
+ ** Inserting faculty w/ ID =     13456789  NAME = J.Jones       **
+
+ ** Inserting faculty w/ ID =      1234567  NAME = B.Doe         **
+
+ 13456789 J.Jones       MATH PROF      100000.00                                                     
+ 32010101 S.Jobs        COSC PROF      125000.00                                                     
+ 34567890 B.Smith       BIOL PROF      110000.00                                                     
+ ** Deleting faculty w/ ID =     23456789  NAME = S.Jones       **
+ CAN'T UPDATE FACULTY MEMBER
+ ** Updating faculty member w/ ID =      1234567  NAME = B.Gates       **
+ ** Updating faculty member w/ ID =      1234567  NAME = B.Gates       **
+ ** Inserting faculty w/ ID =     34534565  NAME = H.Nelson      **
+
+ ** Inserting faculty w/ ID =     36323232  NAME = P.Jones       **
+
+ 36323232 P.Jones       PHYS ASSTPROF   68000.00                                                     
+ 34534565 H.Nelson      ENGR ASSOCPROF 100000.00                                                     
+  1234567 B.Doe         ENGR ASSOCPROF 120000.00                                                     
+ 13456789 J.Jones       MATH PROF      100000.00                                                     
+ 32010101 S.Jobs        COSC PROF      125000.00                                                     
+  1234567 B.Gates       COSC ASSTPROF  100000.00                                                     
+ 34567890 B.Smith       BIOL PROF      110000.00                                                     
+ 12345678 T.Nute        COSC ASSOCPROF  90000.00                                                     
+ 13456789 J.Jones       MATH PROF      100000.00                                                     
+ ** Inserting faculty w/ ID =       232323  NAME = Y.Tittle      **
+
+ ** Inserting faculty w/ ID =     45454545  NAME = T.Tunes       **
+
+ ** Updating faculty member w/ ID =     34534565  NAME = H.Nelson      **
+ ** Inserting faculty w/ ID =     12121212  NAME = B.Gates       **
+
+ ** Updating faculty member w/ ID =     12121212  NAME = B.Gates       **
+ ** Updating faculty member w/ ID =     12121212  NAME = B.Gates       **
+ ** Updating faculty member w/ ID =     12121212  NAME = B.Gates       **
+ ** Deleting faculty w/ ID =     13456789  NAME = J.Jones       **
+ CAN'T FIND ID:     23456789
+ FACULTY MEMBER DOES NOT EXIST
+ ** Deleting faculty w/ ID =     12345678  NAME = T.Nute        **
+ 12121212 B.Gates       CHEM ASSOCPROF 150000.00                                                     
+ 45454545 T.Tunes       PHYS INST       90000.00                                                     
+   232323 Y.Tittle      CHEM ASSTPROF  111000.00                                                     
+ 36323232 P.Jones       PHYS ASSTPROF   68000.00                                                     
+ 34534565 H.Nelson      ENGR ASSOCPROF 110000.00                                                     
+  1234567 B.Doe         ENGR ASSOCPROF 120000.00                                                     
+ 32010101 S.Jobs        COSC PROF      125000.00                                                     
+  1234567 B.Gates       COSC ASSTPROF  100000.00                                                     
+ 34567890 B.Smith       BIOL PROF      110000.00                                                     
  END OF DATA REACHED

@@ -1,3 +1,7 @@
+!**************************************************************************!
+!*  This module helps the main program insert information of a faculty    *!
+!*  to linked list and delete a faculty information                       *!
+!**************************************************************************!
 MODULE INSERT_AND_DELETE
 
 	USE CLASS_FACULTY
@@ -8,6 +12,7 @@ MODULE INSERT_AND_DELETE
 
     CONTAINS
 
+    ! insert a new faculty member information to linked list
 	INTEGER FUNCTION INSERT_OP(INPUT_STRING, FACULTY_LIST, HEAD_INT)
 			CHARACTER*66 			:: INPUT_STRING
 			INTEGER					:: IDNUM, EMPTY_INDEX, HEAD_INT
@@ -43,6 +48,7 @@ MODULE INSERT_AND_DELETE
 	END FUNCTION INSERT_OP
 
 
+    ! delete a faculty information given id
 	SUBROUTINE DELETE_OP(INPUT_STRING, FACULTY_LIST, HEAD_INT)
             INTEGER                             :: IDNUM, PREVIOUS_INDEX, INDEX , HEAD_INT
             CHARACTER*66                        :: INPUT_STRING

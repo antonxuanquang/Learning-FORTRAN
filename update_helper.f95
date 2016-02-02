@@ -1,3 +1,7 @@
+!**************************************************************************!
+!*  This module helps the main program updates information of a faculty   *!
+!*  member.                                                               *!
+!**************************************************************************!
 MODULE UPDATE_HELPER
 
     USE FINDER
@@ -7,6 +11,7 @@ MODULE UPDATE_HELPER
 
 	CONTAINS
 
+    ! update department information of a faculty given id and name
 	SUBROUTINE UPDATE_DEPT_OP(INPUT_STRING,FACULTY_LIST,HEAD_INDEX)
         CHARACTER*66 			        :: INPUT_STRING
         INTEGER				    	    :: IDNUMBER_ELEM, HEAD_INDEX, INDEX
@@ -27,12 +32,10 @@ MODULE UPDATE_HELPER
             WRITE(*,*) "CAN'T UPDATE FACULTY MEMBER"
         END IF
 
-
-
-
-
 	END SUBROUTINE UPDATE_DEPT_OP
 
+
+    ! update title information of a faculty given id and name
 	SUBROUTINE UPDATE_TITLE_OP(INPUT_STRING,FACULTY_LIST,HEAD_INDEX)
         CHARACTER*66 			        :: INPUT_STRING
         INTEGER				    	    :: IDNUMBER_ELEM, HEAD_INDEX, INDEX
@@ -54,6 +57,8 @@ MODULE UPDATE_HELPER
         END IF
 	END SUBROUTINE UPDATE_TITLE_OP
 
+
+    ! update pay information of a faculty given id and name
 	SUBROUTINE UPDATE_PAY_OP(INPUT_STRING,FACULTY_LIST,HEAD_INDEX)
         CHARACTER*66 			        :: INPUT_STRING
         INTEGER				    	    :: IDNUMBER_ELEM, HEAD_INDEX, INDEX

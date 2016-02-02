@@ -12,6 +12,7 @@ MODULE CLASS_FACULTY
 
     CONTAINS
 
+    ! print information of a faculty member
 	CHARACTER(100) FUNCTION PRINT_FACULTY(FAC_MEM)
         IMPLICIT NONE
         CHARACTER(100) RESULT
@@ -23,6 +24,7 @@ MODULE CLASS_FACULTY
         PRINT_FACULTY = ID_NUMBER // ' '// FAC_MEM%NAME// ' '// FAC_MEM%DEPT// ' '// FAC_MEM%RANK// ' '// PAY_NUMBER
     END FUNCTION PRINT_FACULTY
 
+    ! return the index of next faculty member in the linked list
     INTEGER FUNCTION NEXT(FAC_MEM)
         IMPLICIT NONE
         TYPE(FACULTY) FAC_MEM
