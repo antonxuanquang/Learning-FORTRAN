@@ -41,6 +41,25 @@ MODULE FINDER
         FIND_FACULTY_MEMBER = INDEX
     END FUNCTION
 
+    ! return index in faculty array by inputing id number
+    INTEGER FUNCTION FIND_FACULTY_BY_NAME_AND_ID(IDNUM, NAME, FACULTY_LIST, HEAD_INDEX)
+
+        INTEGER                             :: IDNUM,I,HEAD_INDEX, INDEX, CURRENT
+        CHARACTER*13                        :: NAME
+        TYPE(FACULTY), DIMENSION(100)       :: FACULTY_LIST
+
+        INDEX = -1;
+        CURRENT = HEAD_INDEX
+        DO WHILE (CURRENT /= -99)
+            IF (FACULTY_LIST(CURRENT)%IDNUM == IDNUM.AND.FACULTY_LIST(CURRENT)%NAME == NAME) THEN
+                INDEX = CURRENT
+                EXIT
+            END IF
+            CURRENT = NEXT(FACULTY_LIST(CURRENT))
+        END DO
+        FIND_FACULTY_BY_NAME_AND_ID = INDEX
+    END FUNCTION
+
     ! return index of previous faculty array by inputing id number
     INTEGER FUNCTION FIND_PREVIOUS_FACULTY(IDNUM, FACULTY_LIST, HEAD_INDEX)
 
